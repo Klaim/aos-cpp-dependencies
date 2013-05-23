@@ -1,4 +1,4 @@
-﻿cmake_minimum_required( VERSION 2.8 )
+cmake_minimum_required( VERSION 2.8 )
 project( AOS_all_dependencies )
 
 message( STATUS "======== Art Of Sequence: All Projects Dependencies ========" )

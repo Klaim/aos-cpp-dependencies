@@ -47,7 +47,21 @@ set( TBB_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/itbb )
 set( TBB_INCLUDE_DIRS ${TBB_ROOT}/include )
 set( TBB_INCLUDE_DIRS ${TBB_INCLUDE_DIRS} PARENT_SCOPE )
 
-set_property( TARGET tbb				PROPERTY FOLDER ${AOS_DEPENDENCIES_PROJECTS_GROUP_PATH}/itbb )
+set_property( TARGET tbb		PROPERTY FOLDER ${AOS_DEPENDENCIES_PROJECTS_GROUP_PATH}/itbb )
+
+####################################################
+# Google Test
+message( STATUS "--- Google test ----" )
+
+set( gtest_force_shared_crt 	TRUE	CACHE BOOL "" )
+add_subdirectory( gtest )
+
+set_property( TARGET gtest		PROPERTY FOLDER ${AOS_DEPENDENCIES_PROJECTS_GROUP_PATH}/gtest )
+set_property( TARGET gtest_main	PROPERTY FOLDER ${AOS_DEPENDENCIES_PROJECTS_GROUP_PATH}/gtest )
+
+set( GTEST_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/gtest )
+set( GTEST_INCLUDE_DIR ${GTEST_ROOT_DIR}/include PARENT_SCOPE )
+
 
 
 message( STATUS "======== AOS All Dependencies : END ========" )
